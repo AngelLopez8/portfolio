@@ -24,7 +24,14 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
 app.get('/', (req, res) => {
-    res.send("Hello");
+    const projects = [];
+    const skills = [];
+    res.render('home.ejs', { pageTitle: "Home", projects, skills });
+});
+
+app.get('/portfolio', (req, res) => {
+    const projects = [];
+    res.render('portfolio.ejs', {pageTitle: "Portfolio", projects});
 });
 
 app.listen(port, (req, res) => {
