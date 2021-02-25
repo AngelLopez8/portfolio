@@ -17,14 +17,14 @@
                 <p>I have experience with the following technologies on the Front-End:</p>
                 <div>HTML/CSS <progress value="90" max="100"></progress></div>
                 <div>JavaScript <progress value="90" max="100"></progress></div>
-                <div>React.js <progress value="80" max="100"></progress></div>
+                <!-- <div>React.js <progress value="80" max="100"></progress></div> -->
             </div>
             <div class="service">
                 <h3>Back-End Development</h3>
                 <p>I have experience with the following technologies on the Back-End:</p>
                 <div>Express.js <progress value="90" max="100"></progress></div>
                 <div>Python <progress value="85" max="100"></progress></div>
-                <div>Django <progress value="80" max="100"></progress></div>
+                <!-- <div>Django <progress value="80" max="100"></progress></div> -->
             </div>
         </div>
 
@@ -55,7 +55,7 @@
 
         <div class="portfolio">
             <% for (const project of projects) { %>
-                <a href=<%= project.link %> class="portfolio-item" target="_blank">
+                <a href="/<%= project.project %>" class="portfolio-item">
                     <img class="portfolio-img" src=<%= project.img %> alt=<%= project.title %>>
                 </a> 
             <% } %>

@@ -486,3 +486,26 @@ header {
     color: var(--clr-light);
     padding: .5rem 1rem;
 }
+
+/* projects */
+
+.project-container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: var(--bs);
+}
+
+.project-img {
+    margin: auto;
+    padding: 1rem;
+    width: 100%;
+}
+
+.project-desc {
+    font-size: var(--fs-h3);
+}
+
+.links {
+    font-size: var(--fs-h2);
+}

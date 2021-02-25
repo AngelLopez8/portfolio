@@ -34,6 +34,13 @@ app.post('/contact', (req, res) => {
     res.redirect('/contact?result=true');
 });
 
+app.get('/:id', (req, res) => {
+    const project = loadProjects().filter( (proj) => {
+        return proj.project === req.params.id;
+    })[0];
+    res.render('project.ejs', { pageTitle: project.project, project });
+});
+
 app.get('*', (req, res) => {
     res.render('404.ejs', { pageTitle: req.params[0].slice(1)});
 })
@@ -46,10 +53,10 @@ app.listen(port, (req, res) => {
 
 const loadProjects = () => {
     try{
-        const dataBuffer = fs.readFileSync('projects.json')
-        const dataJSON = dataBuffer.toString()
-        return JSON.parse(dataJSON)
+        const dataBuffer = fs.readFileSync('projects.json');
+        const dataJSON = dataBuffer.toString();
+        return JSON.parse(dataJSON);
     } catch (e){
-        return []
+        return [];
     }
-}
+};
