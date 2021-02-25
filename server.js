@@ -14,7 +14,6 @@ mongoose.connect(uri,
 mongoose.connection.once('open', () => {
     console.log('MongoDB database connection established successfully!');
 });
-mongoose.set('bufferCommands', false);
 
 app.use(cors());
 app.use(express.static('public/'));
@@ -31,7 +30,9 @@ app.get('/', (req, res) => {
         .then( projects => {
             res.render('home.ejs', { pageTitle: "Home", projects});
         })
-        .catch( err => res.status(400).json('Error: ' + err));
+        .catch( err => {//res.status(400).json('Error: ' + err)}
+        res.render('home.ejs', { pageTitle: "Home", projects: []});    
+        );
 });
 
 app.get('/contact', (req, res) => {
