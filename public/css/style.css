@@ -446,3 +446,43 @@ header {
 .social-list-link {
     padding: .5em;
 }
+
+/* contact */
+
+.contact {
+    margin: 0 auto;
+    width: 50%;
+    box-shadow: var(--bs);
+    background: var(--clr-dark);
+    padding: 1rem;
+    color: var(--clr-light);
+    font-size: var(--fs-h3);
+}
+
+.contact-form {
+    padding: 1rem;
+}
+
+.contact-label {
+    font-weight: var(--fw-bold);
+}
+
+.contact-input {
+    width: 50%;
+}
+
+.contact-textarea {
+    width: 75%;
+    height: 10rem;
+}
+
+.center-elements {
+    text-align: center;
+    padding: .5rem;
+}
+
+.contact-btn {
+    background: var(--clr-accent);
+    color: var(--clr-light);
+    padding: .5rem 1rem;
+}

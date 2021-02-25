@@ -54,17 +54,11 @@
         <p class="section-subtitle">A selection of my range of work</p>
 
         <div class="portfolio">
-            <a href="#" class="portfolio-item">
-                <img class="portfolio-img" src="https://assets.newatlas.com/dims4/default/d635288/2147483647/strip/true/crop/1422x948+249+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Farchive%2Fbest-film-tv-2018-upcoming-3.jpg" alt="">
-            </a>
-
-            <a href="#" class="portfolio-item">
-                <img class="portfolio-img" src="https://filmdaily.co/wp-content/uploads/2019/12/scifi-lede.jpg" alt="">
-            </a>
-
-            <a href="#" class="portfolio-item">
-                <img class="portfolio-img" src="https://cdn1.epicgames.com/ue/item/PolarFacility_Screenshot_00-1920x1080-0957b74abb217493d37338447e82dfc3.png?resize=1&w=1600" alt="">
-            </a>
+            <% for (const project of projects) { %>
+                <a href=<%= project.link %> class="portfolio-item">
+                    <img class="portfolio-img" src=<%= project.img %> alt=<%= project.title %>>
+                </a> 
+            <% } %>
         </div>
     </section>
 

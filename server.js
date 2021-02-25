@@ -23,16 +23,31 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
+let Project = require('./models/project.model');
+
 app.get('/', (req, res) => {
-    const projects = [];
-    const skills = [];
-    res.render('home.ejs', { pageTitle: "Home", projects, skills });
+    Project.find()
+        .then( projects => {
+            res.render('home.ejs', { pageTitle: "Home", projects});
+        })
+        .catch( err => res.status(400).json('Error: ' + err));
 });
 
-app.get('/portfolio', (req, res) => {
-    const projects = [];
-    res.render('portfolio.ejs', {pageTitle: "Portfolio", projects});
+app.get('/contact', (req, res) => {
+
+    if (req.query.result){
+        return res.render('contact.ejs', { pageTitle: 'Contact', result: req.query.result });
+    }
+    res.render('contact.ejs', { pageTitle: 'Contact', result: null });
 });
+
+app.post('/contact', (req, res) => {
+    res.redirect('/contact?result=true');
+});
+
+app.get('*', (req, res) => {
+    res.render('404.ejs', { pageTitle: req.params[0].slice(1)});
+})
 
 app.listen(port, (req, res) => {
     console.log("Listening on port: " + port);
