@@ -25,8 +25,8 @@ app.set('views', path.join(__dirname, '/views'));
 
 let Project = require('./models/project.model');
 
-app.get('/', (req, res) => {
-    Project.find()
+app.get('/', async (req, res) => {
+    await Project.find()
         .then( projects => {
             res.render('home.ejs', { pageTitle: "Home", projects});
         })
