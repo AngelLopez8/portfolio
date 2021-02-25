@@ -1,14 +1,14 @@
 [
     {
         "project": "Conway's Game Of Life",
-        "description":"Project is based on Conway's Game of Life. It is a zero-player game, m...",
+        "description":"Project consists of insperation from Conway's Game of Life. Which is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine.",
         "link" : "https://angellopez8.github.io/conway/conway.html",
         "github": "https://www.github.com/AngelLopez8/conway",
         "img": "img/conway.png"
     },
     {
         "project": "Sorting Algorithm Visualizer",
-        "description": "Sorting algorithms can be understood better when visualizing, so this ...",
+        "description": "Project gives users the a visual representation on how a few sorting algorithms work. Visual representation helps individuals understand how these algorithms work by visualizing each step of an algorithm. After each run the data is randomized after the press of the Reset button.",
         "link": "https://lopez-sort-viz.herokuapp.com/",
         "github": "https://www.github.com/AngelLopez8/sortviz",
         "img": "img/sort.png"
