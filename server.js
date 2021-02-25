@@ -7,13 +7,13 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-const uri = process.env.ATLAS_URI;
+// const uri = process.env.ATLAS_URI;
 
-mongoose.connect(uri,
-     { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true });
-mongoose.connection.once('open', () => {
-    console.log('MongoDB database connection established successfully!');
-});
+// mongoose.connect(uri,
+//      { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true });
+// mongoose.connection.once('open', () => {
+//     console.log('MongoDB database connection established successfully!');
+// });
 
 app.use(cors());
 app.use(express.static('public/'));
