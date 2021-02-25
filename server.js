@@ -31,8 +31,8 @@ app.get('/', (req, res) => {
             res.render('home.ejs', { pageTitle: "Home", projects});
         })
         .catch( err => {//res.status(400).json('Error: ' + err)}
-        res.render('home.ejs', { pageTitle: "Home", projects: []});    
-        );
+            res.render('home.ejs', { pageTitle: "Home", projects: []});
+        });    
 });
 
 app.get('/contact', (req, res) => {
