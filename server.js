@@ -1,19 +1,11 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-const { json } = require('express');
+const fs = require('fs');
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-// const uri = process.env.ATLAS_URI;
-
-// mongoose.connect(uri,
-//      { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true });
-// mongoose.connection.once('open', () => {
-//     console.log('MongoDB database connection established successfully!');
-// });
 
 app.use(cors());
 app.use(express.static('public/'));
@@ -23,16 +15,11 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
-let Project = require('./models/project.model');
-
 app.get('/', async (req, res) => {
-    await Project.find()
-        .then( projects => {
-            res.render('home.ejs', { pageTitle: "Home", projects});
-        })
-        .catch( err => {//res.status(400).json('Error: ' + err)}
-            res.render('home.ejs', { pageTitle: "Home", projects: []});
-        });    
+    
+    const projects = loadProjects();
+    
+    res.render('home.ejs', { pageTitle: "Home", projects});   
 });
 
 app.get('/contact', (req, res) => {
@@ -54,3 +41,15 @@ app.get('*', (req, res) => {
 app.listen(port, (req, res) => {
     console.log("Listening on port: " + port);
 });
+
+/* read functions */
+
+const loadProjects = () => {
+    try{
+        const dataBuffer = fs.readFileSync('projects.json')
+        const dataJSON = dataBuffer.toString()
+        return JSON.parse(dataJSON)
+    } catch (e){
+        return []
+    }
+}

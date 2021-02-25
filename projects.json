@@ -1,0 +1,16 @@
+[
+    {
+        "project": "Conway's Game Of Life",
+        "description":"Project is based on Conway's Game of Life. It is a zero-player game, m...",
+        "link" : "https://angellopez8.github.io/conway/conway.html",
+        "github": "https://www.github.com/AngelLopez8/conway",
+        "img": "img/conway.png"
+    },
+    {
+        "project": "Sorting Algorithm Visualizer",
+        "description": "Sorting algorithms can be understood better when visualizing, so this ...",
+        "link": "https://lopez-sort-viz.herokuapp.com/",
+        "github": "https://www.github.com/AngelLopez8/sortviz",
+        "img": "img/sort.png"
+    }
+]
